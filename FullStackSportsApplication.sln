@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsApi", "SportsApi\SportsApi.csproj", "{63EDC49F-D155-4EC6-8ED8-1199A23E1D13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsFrontend", "SportsFrontend\SportsFrontend.csproj", "{BCE17302-8BE3-4389-9E5C-36454AB0C370}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsApiUnitTest", "SportsApiUnitTest\SportsApiUnitTest.csproj", "{2177C6CB-99C0-412B-9A78-DDE60F391C07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63EDC49F-D155-4EC6-8ED8-1199A23E1D13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63EDC49F-D155-4EC6-8ED8-1199A23E1D13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63EDC49F-D155-4EC6-8ED8-1199A23E1D13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63EDC49F-D155-4EC6-8ED8-1199A23E1D13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCE17302-8BE3-4389-9E5C-36454AB0C370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCE17302-8BE3-4389-9E5C-36454AB0C370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCE17302-8BE3-4389-9E5C-36454AB0C370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCE17302-8BE3-4389-9E5C-36454AB0C370}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2177C6CB-99C0-412B-9A78-DDE60F391C07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2177C6CB-99C0-412B-9A78-DDE60F391C07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2177C6CB-99C0-412B-9A78-DDE60F391C07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2177C6CB-99C0-412B-9A78-DDE60F391C07}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
