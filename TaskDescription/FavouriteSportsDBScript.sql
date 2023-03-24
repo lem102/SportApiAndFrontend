@@ -23,7 +23,7 @@ CREATE TABLE TappitTechnicalTest.People(
 	LastName Varchar(50) NOT NULL,
 	IsAuthorised Boolean NOT NULL,
 	IsValid Boolean NOT NULL,
-	IsEnabled Boolean NOT NULL,ß
+	IsEnabled Boolean NOT NULL,
  	CONSTRAINT PK_People PRIMARY KEY 
 	(
 		PersonId 
