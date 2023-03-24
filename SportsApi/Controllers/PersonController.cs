@@ -15,7 +15,7 @@ public class PersonController : ControllerBase
         _personService = personService;
     }
 
-    [HttpGet(Name = "GetPeopleWithFavouriteSport")]
+    [HttpGet(Name = "GetPeople")]
     public IEnumerable<Person> Get()
     {
         return _personService.GetPeople();

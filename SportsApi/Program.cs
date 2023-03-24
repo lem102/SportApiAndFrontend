@@ -1,6 +1,7 @@
 using SportsApi.Models;
 using SportsApi.Repositories;
 using SportsApi.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,9 +12,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<TappittechnicaltestContext>();
+builder.Services.AddDbContext<TappittechnicaltestContext>(options => {
+    options.UseNpgsql(builder.Configuration.GetConnectionString("Connection"));
+});
+
 builder.Services.AddScoped<ISportRepository, SportRepository>();
 builder.Services.AddScoped<ISportService, SportService>();
+builder.Services.AddScoped<IPersonRepository, PersonRepository>();
+builder.Services.AddScoped<IPersonService, PersonService>();
 
 var app = builder.Build();
 
