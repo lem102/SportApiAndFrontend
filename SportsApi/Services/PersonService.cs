@@ -1,4 +1,5 @@
 using SportsApi.Repositories;
+using SportsModels;
 
 namespace SportsApi.Services;
 
@@ -11,13 +12,13 @@ public class PersonService : IPersonService
         _personRepository = personRepository;
     }
 
-    public IEnumerable<Models.Person> GetPeople()
+    public IEnumerable<Person> GetPeople()
     {
         var databasePeople = _personRepository.GetPeople();
         return databasePeople.Select(person => mapDatabasePersonToModel(person));
     }
 
-    public Models.Person? GetPerson(int personId)
+    public Person? GetPerson(int personId)
     {
         var databasePerson = _personRepository.GetPerson(personId);
         if (databasePerson is null) {
@@ -26,7 +27,7 @@ public class PersonService : IPersonService
         return mapDatabasePersonToModel(databasePerson);
     }
 
-    private Models.Person mapDatabasePersonToModel(Database.Person databasePerson) => new Models.Person(
+    private Person mapDatabasePersonToModel(Database.Person databasePerson) => new Person(
         databasePerson.PersonId,
         databasePerson.FirstName,
         databasePerson.LastName,
@@ -36,7 +37,7 @@ public class PersonService : IPersonService
         databasePerson.Sports.Select(sport => mapDatabaseSportToModel(sport)).ToArray()
     );
 
-    private Models.Sport mapDatabaseSportToModel(Database.Sport databaseSport) => new Models.Sport(
+    private Sport mapDatabaseSportToModel(Database.Sport databaseSport) => new Sport(
         databaseSport.SportId,
         databaseSport.Name,
         databaseSport.IsEnabled

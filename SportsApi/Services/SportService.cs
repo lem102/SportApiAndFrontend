@@ -1,4 +1,4 @@
-using SportsApi.Models;
+using SportsModels;
 using SportsApi.Repositories;
 
 namespace SportsApi.Services;

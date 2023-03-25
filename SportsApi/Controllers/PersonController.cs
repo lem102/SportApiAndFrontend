@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using SportsApi.Models;
+using SportsModels;
 using SportsApi.Services;
 
 namespace SportsApi.Controllers;

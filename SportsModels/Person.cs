@@ -1,4 +1,4 @@
-namespace SportsApi.Models;
+namespace SportsModels;
 
 public record class Person(
 int PersonId,
