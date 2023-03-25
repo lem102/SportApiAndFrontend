@@ -2,6 +2,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddHttpClient("Api", httpClient =>
+{
+    var url = builder.Configuration.GetConnectionString("Api");
+    if (url is null)
+    {
+        throw new Exception("Add api url to appsettings.json");
+    }
+    httpClient.BaseAddress = new Uri(url);
+});
 
 var app = builder.Build();
 

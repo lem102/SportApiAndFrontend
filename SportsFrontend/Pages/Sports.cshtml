@@ -1,0 +1,24 @@
+﻿@page
+@model SportsModel
+@{
+ViewData["Title"] = "Sports Data";
+}
+
+<div class="text-center">
+  <h1 class="display-4">Sports</h1>
+  <table class="table table-bordered table-responsive table-hover">
+    <tr>
+      <th>Name</th>
+      <th>Enabled</th>
+      <th>Favourites</th>
+    </tr>
+    @foreach (var sport in Model.Sports)
+    {
+    <tr>
+      <td>@sport.Name</td>
+      <td>@sport.IsEnabled</td>
+      <td>@sport.Favourites</td>
+    </tr>
+    }
+  </table>
+</div>

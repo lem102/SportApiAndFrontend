@@ -1,0 +1,45 @@
+﻿@page
+@model PeopleModel
+@{
+ViewData["Title"] = "People Data";
+}
+
+<div class="text-center">
+  <h1 class="display-4">People</h1>
+  <table class="table table-bordered table-responsive table-hover">
+    <tr>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>IsAuthorised</th>
+      <th>IsValid</th>
+      <th>IsEnabled</th>
+      <th>Sports</th>
+    </tr>
+    @foreach (var person in Model.People)
+    {
+    <tr>
+      <td><a asp-page="Person" asp-route-id="@person.PersonId">@person.FirstName</a></td>
+      <td>@person.LastName</td>
+      <td>@person.IsAuthorised</td>
+      <td>@person.IsValid</td>
+      <td>@person.IsEnabled</td>
+      <td>
+        <table class="table table-bordered table-responsive table-hover">
+          <tr>
+            <th>Name</th>
+            <th>Enabled</th>
+          </tr>
+          @foreach (var sport in person.Sports)
+          {
+          <tr>
+            <td>@sport.Name</td>
+            <td>@sport.IsEnabled</td>
+          </tr>
+          }
+        </table>
+      </td>
+    </tr>
+    }
+  </table>
+</div>
+

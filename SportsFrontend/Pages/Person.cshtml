@@ -1,0 +1,41 @@
+﻿@page "{id}"
+@model PersonModel
+@{
+ViewData["Title"] = "Person Data";
+}
+
+<div class="text-center">
+  <h1 class="display-4">Person</h1>
+  <table class="table table-bordered table-responsive table-hover">
+    <tr>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>IsAuthorised</th>
+      <th>IsValid</th>
+      <th>IsEnabled</th>
+      <th>Sports</th>
+    </tr>
+    <tr>
+      <td>@Model.Person.FirstName</td>
+      <td>@Model.Person.LastName</td>
+      <td>@Model.Person.IsAuthorised</td>
+      <td>@Model.Person.IsValid</td>
+      <td>@Model.Person.IsEnabled</td>
+      <td>
+        <table class="table table-bordered table-responsive table-hover">
+          <tr>
+            <th>Name</th>
+            <th>Enabled</th>
+          </tr>
+          @foreach (var sport in @Model.Person.Sports)
+          {
+          <tr>
+            <td>@sport.Name</td>
+            <td>@sport.IsEnabled</td>
+          </tr>
+          }
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
