@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace SportsApi.Models;
+namespace SportsApi.Database;
 
 public partial class TappittechnicaltestContext : DbContext
 {
@@ -26,11 +26,11 @@ public partial class TappittechnicaltestContext : DbContext
     {
         modelBuilder.Entity<Person>(entity =>
         {
-            entity.HasKey(e => e.Personid).HasName("pk_people");
+            entity.HasKey(e => e.PersonId).HasName("pk_people");
 
             entity.ToTable("people", "tappittechnicaltest");
 
-            entity.Property(e => e.Personid).HasColumnName("personid");
+            entity.Property(e => e.PersonId).HasColumnName("personid");
             entity.Property(e => e.FirstName)
                 .HasMaxLength(50)
                 .HasColumnName("firstname");

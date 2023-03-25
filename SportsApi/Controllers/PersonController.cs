@@ -15,9 +15,21 @@ public class PersonController : ControllerBase
         _personService = personService;
     }
 
-    [HttpGet(Name = "GetPeople")]
-    public IEnumerable<Person> Get()
+    [HttpGet()]
+    public IEnumerable<Person> GetPeople()
     {
         return _personService.GetPeople();
+    }
+
+    [HttpGet("{id}")]
+    public Person? GetPerson(int id)
+    {
+        var person = _personService.GetPerson(id);
+        if (person is null)
+        {
+            Response.StatusCode = 404;
+            return null;
+        }
+        return person;
     }
 }

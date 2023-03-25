@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using SportsApi.Models;
+using SportsApi.Database;
 
 namespace SportsApi.Repositories;
 

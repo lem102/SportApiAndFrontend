@@ -1,4 +1,4 @@
-using SportsApi.Models;
+using SportsApi.Database;
 using SportsApi.Repositories;
 using SportsApi.Services;
 using Microsoft.EntityFrameworkCore;
