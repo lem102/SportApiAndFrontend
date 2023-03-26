@@ -15,7 +15,7 @@ public class PersonController : ControllerBase
         _personService = personService;
     }
 
-    [HttpGet()]
+    [HttpGet]
     public IEnumerable<PersonResponse> GetPeople()
     {
         return _personService.GetPeople();
