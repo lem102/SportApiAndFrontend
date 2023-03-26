@@ -9,7 +9,7 @@ REST api and simple frontend. All commands are run from the root of the project.
 
 ## Api
 
-Add your postgres database connection string to `./SportsApi/appsettings.json` like so:
+Add your postgres database connection string to `./Sports.Api/appsettings.json` like so:
 
 ```
 {
@@ -25,7 +25,7 @@ Set up the database with the sql file found here: `TaskDescription/FavouriteSpor
 
 ## Frontend
 
-Add the url of the api to `./SportsFrontend/appsettings.json` like so:
+Add the url of the api to `./Sports.Frontend/appsettings.json` like so:
 
 ```
 {
@@ -41,11 +41,11 @@ Add the url of the api to `./SportsFrontend/appsettings.json` like so:
 
 ## Api
 
-Start the api with `dotnet run --project ./SportsApi/`.
+Start the api with `dotnet run --project ./Sports.Api/`.
 
 ## Frontend
 
-Start the frontend with `dotnet run --project ./SportsFrontend/`.
+Start the frontend with `dotnet run --project ./Sports.Frontend/`.
 
 # Tests
 

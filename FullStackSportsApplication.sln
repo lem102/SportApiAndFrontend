@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsApi", "SportsApi\SportsApi.csproj", "{63EDC49F-D155-4EC6-8ED8-1199A23E1D13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sports.Api", "Sports.Api\Sports.Api.csproj", "{63EDC49F-D155-4EC6-8ED8-1199A23E1D13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsFrontend", "SportsFrontend\SportsFrontend.csproj", "{BCE17302-8BE3-4389-9E5C-36454AB0C370}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sports.Frontend", "Sports.Frontend\Sports.Frontend.csproj", "{BCE17302-8BE3-4389-9E5C-36454AB0C370}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsApiUnitTest", "SportsApiUnitTest\SportsApiUnitTest.csproj", "{2177C6CB-99C0-412B-9A78-DDE60F391C07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sports.ApiUnitTest", "Sports.ApiUnitTest\Sports.ApiUnitTest.csproj", "{2177C6CB-99C0-412B-9A78-DDE60F391C07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sports.Models", "Sports.Models\Sports.Models.csproj", "{60C6E072-E023-43B9-8037-A020DBC495B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,5 +36,9 @@ Global
 		{3F5707E2-797E-4B4F-BD6E-6543756D03F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F5707E2-797E-4B4F-BD6E-6543756D03F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F5707E2-797E-4B4F-BD6E-6543756D03F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60C6E072-E023-43B9-8037-A020DBC495B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60C6E072-E023-43B9-8037-A020DBC495B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60C6E072-E023-43B9-8037-A020DBC495B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60C6E072-E023-43B9-8037-A020DBC495B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
