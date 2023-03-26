@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SportsApi.Database;
 
-public partial class TappittechnicaltestContext : DbContext
+public partial class SportContext : DbContext
 {
-    public TappittechnicaltestContext()
+    public SportContext()
     {
     }
 
-    public TappittechnicaltestContext(DbContextOptions<TappittechnicaltestContext> options)
+    public SportContext(DbContextOptions<SportContext> options)
         : base(options)
     {
     }

@@ -21,6 +21,8 @@ Add your postgres database connection string to `./SportsApi/appsettings.json` l
 
 ```
 
+Set up the database with the sql file found here: `TaskDescription/FavouriteSportsDBScript.sql`
+
 ## Frontend
 
 Add the url of the api to `./SportsFrontend/appsettings.json` like so:

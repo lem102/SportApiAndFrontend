@@ -5,9 +5,9 @@ namespace SportsApi.Repositories;
 
 class SportRepository : ISportRepository
 {
-    private TappittechnicaltestContext _context;
+    private SportContext _context;
 
-    public SportRepository(TappittechnicaltestContext context)
+    public SportRepository(SportContext context)
     {
         _context = context;
     }

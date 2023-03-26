@@ -5,9 +5,9 @@ namespace SportsApi.Repositories;
 
 public class PersonRepository : IPersonRepository
 {
-    private Database.TappittechnicaltestContext _context;
+    private Database.SportContext _context;
 
-    public PersonRepository(Database.TappittechnicaltestContext context)
+    public PersonRepository(Database.SportContext context)
     {
         _context = context;
     }

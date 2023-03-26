@@ -12,7 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<TappittechnicaltestContext>(options => {
+builder.Services.AddDbContext<SportContext>(options => {
     options.UseNpgsql(builder.Configuration.GetConnectionString("Connection"));
 });
 
