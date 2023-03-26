@@ -1,6 +1,6 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Sports.Models;
+using Sports.Response.Models;
 
 namespace Sports.Frontend.Pages;
 
@@ -8,7 +8,7 @@ public class PersonModel : PageModel
 {
     private IHttpClientFactory _httpClientFactory;
 
-    public Person Person { get; private set; }
+    public PersonResponse Person { get; private set; }
 
     public PersonModel(IHttpClientFactory httpClientFactory)
     {
@@ -21,14 +21,14 @@ public class PersonModel : PageModel
         Person = await GetPerson(httpClient, id);
     }
 
-    private async Task<Person> GetPerson(HttpClient httpClient, int personId)
+    private async Task<PersonResponse> GetPerson(HttpClient httpClient, int personId)
     {
         var response = await httpClient.GetAsync($"Person/{personId}");
         if (response.StatusCode == HttpStatusCode.NotFound)
         {
             throw new HttpRequestException("404 not found");
         }
-        var person = await response.Content.ReadFromJsonAsync<Person>();
+        var person = await response.Content.ReadFromJsonAsync<PersonResponse>();
         if (person is null) {
             throw new Exception("invalid response body");
         }

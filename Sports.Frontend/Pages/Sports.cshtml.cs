@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
-using Sports.Models;
+using Sports.Response.Models;
 
 namespace Sports.Frontend.Pages;
 
@@ -7,12 +7,12 @@ public class SportsModel : PageModel
 {
     private IHttpClientFactory _httpClientFactory;
 
-    public SportWithFavouriteCount[] Sports { get; private set; }
+    public SportWithFavouriteCountResponse[] Sports { get; private set; }
 
     public SportsModel(IHttpClientFactory httpClientFactory)
     {
         _httpClientFactory = httpClientFactory;
-        Sports = new SportWithFavouriteCount[0];
+        Sports = new SportWithFavouriteCountResponse[0];
     }
 
     public async Task OnGetAsync()
@@ -22,13 +22,13 @@ public class SportsModel : PageModel
 
     }
 
-    private async Task<SportWithFavouriteCount[]> GetSports(HttpClient httpClient)
+    private async Task<SportWithFavouriteCountResponse[]> GetSports(HttpClient httpClient)
     {
         var response = await httpClient.GetAsync("Sport");
-        var sports = await response.Content.ReadFromJsonAsync<SportWithFavouriteCount[]>();
+        var sports = await response.Content.ReadFromJsonAsync<SportWithFavouriteCountResponse[]>();
 
         return sports is null
-            ? new SportWithFavouriteCount[0]
+            ? new SportWithFavouriteCountResponse[0]
             : sports;
     }
 }

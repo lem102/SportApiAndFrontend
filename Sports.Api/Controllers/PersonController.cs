@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Sports.Models;
+using Sports.Response.Models;
 using Sports.Api.Services;
 
 namespace Sports.Api.Controllers;
@@ -16,13 +16,13 @@ public class PersonController : ControllerBase
     }
 
     [HttpGet()]
-    public IEnumerable<Person> GetPeople()
+    public IEnumerable<PersonResponse> GetPeople()
     {
         return _personService.GetPeople();
     }
 
     [HttpGet("{id}")]
-    public Person? GetPerson(int id)
+    public PersonResponse? GetPerson(int id)
     {
         var person = _personService.GetPerson(id);
         if (person is null)

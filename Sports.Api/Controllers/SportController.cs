@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Sports.Models;
+using Sports.Response.Models;
 using Sports.Api.Services;
 
 namespace Sports.Api.Controllers;
@@ -16,7 +16,7 @@ public class SportController : ControllerBase
     }
 
     [HttpGet(Name = "GetSportsWithFavouriteCount")]
-    public IEnumerable<SportWithFavouriteCount> Get()
+    public IEnumerable<SportWithFavouriteCountResponse> Get()
     {
         return _sportService.GetSportsWithFavouriteCount();
     }

@@ -1,4 +1,4 @@
-using Sports.Models;
+using Sports.Response.Models;
 using Sports.Api.Repositories;
 
 namespace Sports.Api.Services;
@@ -12,13 +12,13 @@ public class SportService : ISportService
         _sportRepository = sportRepository;
     }
 
-    public IEnumerable<SportWithFavouriteCount> GetSportsWithFavouriteCount()
+    public IEnumerable<SportWithFavouriteCountResponse> GetSportsWithFavouriteCount()
     {
         var sports = _sportRepository.GetSports();
         return sports.Select(sport =>
         {
             var favourites = sport.People.Count();
-            return new SportWithFavouriteCount(
+            return new SportWithFavouriteCountResponse(
                 sport.SportId,
                 sport.Name,
                 sport.IsEnabled,

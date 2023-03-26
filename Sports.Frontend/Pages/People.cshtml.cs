@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Sports.Models;
+using Sports.Response.Models;
 
 namespace Sports.Frontend.Pages;
 
@@ -8,14 +8,14 @@ public class PeopleModel : PageModel
 {
     private IHttpClientFactory _httpClientFactory;
 
-    public Person[] People { get; private set; }
+    public PersonResponse[] People { get; private set; }
 
     public int PersonId { get; set; }
 
     public PeopleModel(IHttpClientFactory httpClientFactory)
     {
         _httpClientFactory = httpClientFactory;
-        People = new Person[0];
+        People = new PersonResponse[0];
     }
 
     public async Task OnGetAsync()
@@ -24,13 +24,13 @@ public class PeopleModel : PageModel
         People = await GetPeople(httpClient);
     }
 
-    private async Task<Person[]> GetPeople(HttpClient httpClient)
+    private async Task<PersonResponse[]> GetPeople(HttpClient httpClient)
     {
         var response = await httpClient.GetAsync("Person");
-        var people = await response.Content.ReadFromJsonAsync<Person[]>();
+        var people = await response.Content.ReadFromJsonAsync<PersonResponse[]>();
 
         return people is null
-            ? new Person[0]
+            ? new PersonResponse[0]
             : people;
     }
 }
