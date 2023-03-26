@@ -24,15 +24,14 @@ public class PersonServiceUnitTest
     public void GetPeople_PopulatedDatabase_PeopleReturned()
     {
         var repository = Substitute.For<IPersonRepository>();
-        var sport = new Sport
-        {
-            SportId = 5,
-        };
         var person = new Person
         {
             PersonId = 3,
             Sports = new List<Sport>{
-                sport
+                new Sport
+                {
+                    SportId = 5,
+                }
             }
         };
         var people = new List<Person>{

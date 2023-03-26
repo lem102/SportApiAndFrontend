@@ -1,9 +1,9 @@
-using Sports.Response.Models;
+using Sports.Api.Database;
 
 namespace Sports.Api.Services;
 
 public interface ISportService
 {
-    IEnumerable<SportWithFavouriteCountResponse> GetSportsWithFavouriteCount();
+    IEnumerable<Sport> GetSports();
 }
 

@@ -7,12 +7,11 @@ public class SportsModel : PageModel
 {
     private IHttpClientFactory _httpClientFactory;
 
-    public SportWithFavouriteCountResponse[] Sports { get; private set; }
+    public SportWithFavouriteCountResponse[] Sports { get; private set; } = Array.Empty<SportWithFavouriteCountResponse>();
 
     public SportsModel(IHttpClientFactory httpClientFactory)
     {
         _httpClientFactory = httpClientFactory;
-        Sports = new SportWithFavouriteCountResponse[0];
     }
 
     public async Task OnGetAsync()

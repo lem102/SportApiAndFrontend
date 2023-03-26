@@ -8,31 +8,25 @@ namespace Sports.ApiUnitTest;
 public class SportsServiceUnitTest
 {
     [Test]
-    public void GetSportsWithFavouriteCount_NoSportsInDatabase_NoSportsReturned()
+    public void GetSports_NoSportsInDatabase_NoSportsReturned()
     {
         var repository = Substitute.For<ISportRepository>();
         var sports = new List<Sport>{};
         repository.GetSports().Returns(sports);
         var systemUnderTest = new SportService(repository);
 
-        var result = systemUnderTest.GetSportsWithFavouriteCount();
+        var result = systemUnderTest.GetSports();
 
         Assert.That(result.Count(), Is.EqualTo(0));
     }
 
     [Test]
-    public void GetSportsWithFavouriteCount_PopulatedDatabase_SportsReturnedWithNumberOfTimesFavourited()
+    public void GetSports_PopulatedDatabase_SportsReturnedWithNumberOfTimesFavourited()
     {
         var repository = Substitute.For<ISportRepository>();
-        var people = new List<Person>{
-            new Person{},
-            new Person{},
-            new Person{}
-        };
         var sport = new Sport
         {
-            SportId = 5,
-            People = people
+            SportId = 5
         };
         var sports = new List<Sport>
         {
@@ -41,10 +35,9 @@ public class SportsServiceUnitTest
         repository.GetSports().Returns(sports);        
         
         var systemUnderTest = new SportService(repository);
-        var result = systemUnderTest.GetSportsWithFavouriteCount().ToArray();
+        var result = systemUnderTest.GetSports().ToArray();
 
         Assert.That(result.Count(), Is.EqualTo(sports.Count()));
         Assert.That(result[0].SportId, Is.EqualTo(sport.SportId));
-        Assert.That(result[0].Favourites, Is.EqualTo(people.Count()));
     }
 }

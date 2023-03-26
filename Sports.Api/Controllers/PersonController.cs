@@ -9,16 +9,20 @@ namespace Sports.Api.Controllers;
 public class PersonController : ControllerBase
 {
     private IPersonService _personService;
+    private IMapper _mapper;
 
-    public PersonController(IPersonService personService)
+    public PersonController(IPersonService personService, IMapper mapper)
     {
         _personService = personService;
+        _mapper = mapper;
     }
 
     [HttpGet]
-    public IEnumerable<PersonResponse> GetPeople()
+    public ActionResult<IEnumerable<PersonResponse>> GetPeople()
     {
-        return _personService.GetPeople();
+        var people = _personService.GetPeople();
+        var personResponse = people.Select(person => _mapper.MapToPerson(person)).ToArray();
+        return Ok(personResponse);
     }
 
     [HttpGet("{id}")]
@@ -29,6 +33,7 @@ public class PersonController : ControllerBase
         {
             return NotFound("Person does not exist");
         }
-        return Ok(person);
+        var personResponses = _mapper.MapToPerson(person);
+        return Ok(personResponses);
     }
 }

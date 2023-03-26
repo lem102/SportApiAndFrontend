@@ -9,15 +9,19 @@ namespace Sports.Api.Controllers;
 public class SportController : ControllerBase
 {
     private ISportService _sportService;
+    private IMapper _mapper;
 
-    public SportController(ISportService sportService)
+    public SportController(ISportService sportService, IMapper personMapper)
     {
         _sportService = sportService;
+        _mapper = personMapper;
     }
 
     [HttpGet(Name = "GetSportsWithFavouriteCount")]
-    public IEnumerable<SportWithFavouriteCountResponse> Get()
+    public ActionResult<IEnumerable<SportWithFavouriteCountResponse>> Get()
     {
-        return _sportService.GetSportsWithFavouriteCount();
+        var sports = _sportService.GetSports();
+        var sportResponse = sports.Select(sport => _mapper.MapToSportWithFavouriteCountResponse(sport)).ToArray();
+        return Ok();
     }
 }

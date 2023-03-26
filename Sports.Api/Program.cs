@@ -20,6 +20,7 @@ builder.Services.AddScoped<ISportRepository, SportRepository>();
 builder.Services.AddScoped<ISportService, SportService>();
 builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 builder.Services.AddScoped<IPersonService, PersonService>();
+builder.Services.AddScoped<IMapper, Mapper>();
 
 var app = builder.Build();
 

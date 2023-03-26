@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Sports.Response.Models;
 
@@ -8,14 +7,13 @@ public class PeopleModel : PageModel
 {
     private IHttpClientFactory _httpClientFactory;
 
-    public PersonResponse[] People { get; private set; }
+    public PersonResponse[] People { get; private set; } = Array.Empty<PersonResponse>();
 
     public int PersonId { get; set; }
 
     public PeopleModel(IHttpClientFactory httpClientFactory)
     {
         _httpClientFactory = httpClientFactory;
-        People = new PersonResponse[0];
     }
 
     public async Task OnGetAsync()

@@ -1,10 +1,10 @@
-using Sports.Response.Models;
+using Sports.Api.Database;
 
 namespace Sports.Api.Services;
 
 public interface IPersonService
 {
-    IEnumerable<PersonResponse> GetPeople();
-    PersonResponse? GetPerson(int personId);
+    IEnumerable<Person> GetPeople();
+    Person? GetPerson(int personId);
 }
 
