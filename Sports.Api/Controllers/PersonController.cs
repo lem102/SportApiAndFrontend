@@ -22,14 +22,13 @@ public class PersonController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public PersonResponse? GetPerson(int id)
+    public ActionResult<PersonResponse> GetPerson(int id)
     {
         var person = _personService.GetPerson(id);
         if (person is null)
         {
-            Response.StatusCode = 404;
-            return null;
+            return NotFound("Person does not exist");
         }
-        return person;
+        return Ok(person);
     }
 }
