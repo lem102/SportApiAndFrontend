@@ -3,7 +3,7 @@ using Sports.Api.Repositories;
 using Sports.Api.Services;
 using Sports.Api.Database;
 
-namespace Sports.ApiUnitTest;
+namespace Sports.Api.UnitTest;
 
 public class PersonServiceUnitTest
 {
